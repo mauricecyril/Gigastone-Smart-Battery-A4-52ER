@@ -19,6 +19,35 @@ Default Admin (Device Web Admin Portal) Password: 0000
 
 ### Terminal Details
 Linux Version: 2.6.31--LSDK-9.2.0_U10.5.13-GST-A4
+GST-2014-11-18-11:17:54
+
+```shell
+# cat /proc/version
+```
+Linux Version 2.6.31--LSDK-9.2.0_U10.5.13-GST-A4 (astro@astro) (gcc version 4.3.3 (GCC)) #44 Tues Nov 18 11:16:25 CST 2014 mips GNU/Linux
+
+```shell
+# cat /proc/meminfo
+```
+Total Memory 62160 kB
+
+```shell
+# cat /proc/cpuinfo
+```
+System Type: Atheros AR9330 (Hornet)
+Processor: 0
+CPU Model: MIPS 24Kc v7.4
+BogoMIPS: 266.24
+Wait Instruction: Yes
+Microsecond Timers: Yes
+tlb_entries: 16
+Extra Interrupt Vector: Yes
+Hartware Watchpoint: yes, count: 4, address/irw mask: [0x0000, 0x0e00,0x0040, 0x0118]
+ASEs Implemented: mips16
+Shadow Register sets: 1
+core: 0
+VCED exceptions: not available
+VCEI exceptions: not available
 
 ### Accessing Via Telnet
 #### 1) Turn on the Smart Battery by pressing and holding the power button for 5 seconds. Once the blue LED is on you can connect to th e
