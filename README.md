@@ -17,160 +17,265 @@ Check Battery Life: Press on/off button, green LED lights indicated battery leve
 Access Smart Box via Browser: 192.168.1.2 in the browser.
 Default Admin (Device Web Admin Portal) Password: 0000 
 
+### Terminal Details
+Linux Version: 2.6.31--LSDK-9.2.0_U10.5.13-GST-A4
+
 ### Accessing Via Telnet
-1) Turn on the Smart Battery by pressing and holding the power button for 5 seconds. Once the blue LED is on you can connect to th e
+#### 1) Turn on the Smart Battery by pressing and holding the power button for 5 seconds. Once the blue LED is on you can connect to th e
 Once you're connected to the router telnet into the device on port 23:
 ```shell
-$ telent -l root:root 192.168.1.2 23
+# telent -l root:root 192.168.1.2 23
 ```
 
 
-### File layout
-Trying 192.168.1.2...
-Connected to 192.168.1.2.
-Escape character is '^]'.
+#### 2) Change the root password
+```shell
+#  
+```
 
-(none) login: root
-Password:
-~ # ls
-br0          dnsmasq.pid  lock         www
-device       ftp          secath0
-~ # ls -R
-.:
-br0          dnsmasq.pid  lock         www
-device       ftp          secath0
+### File & Folder layout
+In /tmp folder:
+./br0
+./dnsmasq.pid  
+./ftp
+./secath0
 
-./device:
+./device
+./device/ftp
+./device/ftp/SDdisk
+./device/ftp/SDdisk/SD
+./device/ftp/SDdisk/SDUSB
 
-./ftp:
-SDdisk
+./lock/
 
-./ftp/SDdisk:
-SD   USB
+./www/
+./www/PVT/client/
+./www/PVT/client/client.sh
+./www/PVT/server/
+./www/PVT/server/server.sh
 
-./ftp/SDdisk/SD:
+./www/db
+./www/header.sh
+./www/smartsync_out.sh
+./www/PVT.sh
+./www/decodeURL
+./www/httpd.sh
+./www/airsetting_gen
+./www/delaycp.sh
+./www/image_check.sh
+./www/storage_test.sh
+./www/airsetting_get
+./www/df_date
+./www/mime.types
+./www/thumbnail_job
+./www/ap_scan.sh
+./www/diskmark
+./www/mount_device
+./www/thumbnail_jpeg
+./www/apps_check.sh
+./www/dns
+./www/mount_log
+./www/udhcpd.conf
+./www/at
+./www/dns_start.sh
+./www/netled_set.sh
+./www/udhcpd.leases
+./www/auto_bridge.sh
+./www/engmode.sh
+./www/noip2
+./www/udhcpd_start.sh
+./www/auto_copy.sh
+./www/ethled.sh
+./www/noipenable.sh
+./www/udprcv
+./www/auto_poweroff.sh
+./www/flashburn
+./www/pivotroot
+./www/udpsend
+./www/auto_sta.sh
+./www/fr_post.sh
+./www/powerlvl
+./www/upgradedelay
+./www/fr_pre.sh
+./www/ppp
+./www/url.sed
+./www/cfg_info.sta
+./www/ghttpd
+./www/repeater
+./www/usbaddlog.sh
+./www/cfg_log
+./www/ghttpd.conf
+./www/rndis
+./www/ghttpd_i
+./www/settings
+./www/client
+./www/gscale
+./www/smartsync_in.sh
 
-./ftp/SDdisk/USB:
 
-./lock:
 
-./www:
-PVT               db                header.sh         smartsync_out.sh
-PVT.sh            decodeURL         httpd.sh          storage
-airsetting_gen    delaycp.sh        image_check.sh    storage_test.sh
-airsetting_get    df_date           mime.types        thumbnail_job
-ap_scan.sh        diskmark          mount_device      thumbnail_jpeg
-apps_check.sh     dns               mount_log         udhcpd.conf
-at                dns_start.sh      netled_set.sh     udhcpd.leases
-auto_bridge.sh    engmode.sh        noip2             udhcpd_start.sh
-auto_copy.sh      ethled.sh         noipenable.sh     udprcv
-auto_poweroff.sh  flashburn         pivotroot         udpsend
-auto_sta.sh       fr_post.sh        powerlvl          upgradedelay
-bridge            fr_pre.sh         ppp               url.sed
-cfg_info.sta      ghttpd            repeater          usbaddlog.sh
-cfg_log           ghttpd.conf       rndis
-cgi-bin           ghttpd_i          settings
-client            gscale            smartsync_in.sh
+./www/bridge/Bridge_enable
+./www/bridge/bridge_saved.sta
+./www/bridge/eth_udhcpc.sh
+./www/bridge/wifi_reset.sh
+./www/bridge/Bridge_info
+./www/bridge/bridgedn.sh 
+./www/bridge/ethoverusb_add.sh
+./www/bridge/wpa.sta
+./www/bridge/ath_udhcpc.sh 
+./www/bridge/bridgeup.sh
+./www/bridge/udhcpc.script
+./www/bridge/bridge 
+./www/bridge/eth_check.sh
+./www/bridge/unknow_code.conf
 
-./www/PVT:
-client  server
+./www/cgi-bin/
+./www/cgi-bin/cgiNK        
+./www/cgi-bin/gdate        
+./www/cgi-bin/gfilemanage  
+./www/cgi-bin/gota         
+./www/cgi-bin/gsync        
+./www/cgi-bin/gwds
+./www/cgi-bin/gadmin       
+./www/cgi-bin/gdb          
+./www/cgi-bin/gfind        
+./www/cgi-bin/gpoweroff    
+./www/cgi-bin/gthumbnail   
+./www/cgi-bin/gwmac
+./www/cgi-bin/gantenna     
+./www/cgi-bin/gddns        
+./www/cgi-bin/gflashburn   
+./www/cgi-bin/gproduct     
+./www/cgi-bin/gupload      
+./www/cgi-bin/gwman
+./www/cgi-bin/gbattery     
+./www/cgi-bin/gdefault     
+./www/cgi-bin/gidle        
+./www/cgi-bin/gscandir     
+./www/cgi-bin/guser        
+./www/cgi-bin/gwmana4
+./www/cgi-bin/gbridge      
+./www/cgi-bin/gdhcpset     
+./www/cgi-bin/ginfo        
+./www/cgi-bin/gscsi        
+./www/cgi-bin/gusertable   
+./www/cgi-bin/id3
+./www/cgi-bin/gchannel     
+./www/cgi-bin/gdownload    
+./www/cgi-bin/glogo        
+./www/cgi-bin/gserverip    
+./www/cgi-bin/gversion     
+./www/cgi-bin/reboot
+./www/cgi-bin/gclient      
+./www/cgi-bin/getupdate    
+./www/cgi-bin/gnetif       
+./www/cgi-bin/gstorage     
+./www/cgi-bin/gwan         
+./www/cgi-bin/tct_ev_proc
 
-./www/PVT/client:
-client.sh
+./www/client/udhcpc.script
 
-./www/PVT/server:
-server.sh
+./www/db/dbfunct.sh  
+./www/db/dbpoll.sh 
+./www/db/dbsync.sh 
+./www/db/global
 
-./www/bridge:
-Bridge_enable      bridge_saved.sta   eth_udhcpc.sh      wifi_reset.sh
-Bridge_info        bridgedn.sh        ethoverusb_add.sh  wpa.sta
-ath_udhcpc.sh      bridgeup.sh        udhcpc.script
-bridge             eth_check.sh       unknow_code.conf
+./www/dns/dns_conf.sh
+./www/dns/dnsmasq.hosts
+./www/dns/dnsmasq.conf
+./www/dns/resolv.dnsmasq.conf
 
-./www/cgi-bin:
-cgiNK        gdate        gfilemanage  gota         gsync        gwds
-gadmin       gdb          gfind        gpoweroff    gthumbnail   gwmac
-gantenna     gddns        gflashburn   gproduct     gupload      gwman
-gbattery     gdefault     gidle        gscandir     guser        gwmana4
-gbridge      gdhcpset     ginfo        gscsi        gusertable   id3
-gchannel     gdownload    glogo        gserverip    gversion     reboot
-gclient      getupdate    gnetif       gstorage     gwan         tct_ev_proc
+./www/ppp/ip-down
+./www/ppp/pppoe-start.sh
+./www/ppp/add.sh 
+./www/ppp/ip-up
+./www/ppp/pppoe-stop.sh
+./www/ppp/add2.sh 
+./www/ppp/ipv6-down
+./www/ppp/pppoe.conf
+./www/ppp/apn_check.sh 
+./www/ppp/ipv6-up 
+./www/ppp/pppoe_on_boot
+./www/ppp/apns.xml 
+./www/ppp/modem 
+./www/ppp/provider
+./www/ppp/chap-secrets 
+./www/ppp/modem-connect-chat
+./www/ppp/removea4.sh
+./www/ppp/chat3g.template
+./www/ppp/options.pptp
+./www/ppp/resolv.conf
+./www/ppp/options.wman 
+./www/ppp/rssi_get.sh
+./www/ppp/display_enable.sh
+./www/ppp/pap-secrets
+./www/ppp/turnon3g
+./www/ppp/display_sleep.sh
+./www/ppp/ppp_set.sh 
+./www/ppp/wman_enable.sh
+./www/ppp/gprs-connect-chat
+./www/ppp/pppoe-connect.sh 
+./www/ppp/wman_power.sh
+./www/ppp/device/
 
-./www/client:
-udhcpc.script
+./www/repeater/rootap_set.sh
 
-./www/db:
-dbfunct.sh  dbpoll.sh   dbsync.sh   global
+./www/rndis/add.sh
+./www/rndis/udhcpc.script
 
-./www/dns:
-dns_conf.sh          dnsmasq.hosts
-dnsmasq.conf         resolv.dnsmasq.conf
+./www/settings/index.html
 
-./www/ppp:
-0e8d:0002           ip-down             pppoe-start.sh
-add.sh              ip-up               pppoe-stop.sh
-add2.sh             ipv6-down           pppoe.conf
-apn_check.sh        ipv6-up             pppoe_on_boot
-apns.xml            modem               provider
-chap-secrets        modem-connect-chat  removea4.sh
-chat3g.template     options.pptp        resolv.conf
-device              options.wman        rssi_get.sh
-display_enable.sh   pap-secrets         turnon3g
-display_sleep.sh    ppp_set.sh          wman_enable.sh
-gprs-connect-chat   pppoe-connect.sh    wman_power.sh
+./www/settings/bootstrap/css
+./www/settings/bootstrap/css/bootstrap-responsive.min.css
+./www/settings/bootstrap/css/bootstrapSwitch.css
+./www/settings/bootstrap/css/bootstrap.min.css
 
-./www/ppp/device:
-0408:1000  12d1:1414  12d1:14c4  12d1:1526  12d1:15e7  12d1:1f11  12d1:1f1e0af0:6971  12d1:1446  12d1:14c5  12d1:1553  12d1:1805  12d1:1f15  19d2:200012d1:1001  12d1:1449  12d1:14d1  12d1:1557  12d1:1c0b  12d1:1f16  1ab7:570012d1:1003  12d1:14ad  12d1:14fe  12d1:155b  12d1:1c1b  12d1:1f17  2001:00a612d1:1009  12d1:14b5  12d1:1505  12d1:156a  12d1:1c24  12d1:1f18  2001:a70712d1:101e  12d1:14b7  12d1:151a  12d1:157c  12d1:1d50  12d1:1f19  feed:567812d1:1030  12d1:14ba  12d1:1520  12d1:157d  12d1:1da1  12d1:1f1b
-12d1:1031  12d1:14c1  12d1:1521  12d1:1583  12d1:1f01  12d1:1f1c
-12d1:1413  12d1:14c3  12d1:1523  12d1:15ca  12d1:1f03  12d1:1f1d
+./www/settings/bootstrap/img
+./www/settings/bootstrap/img/glyphicons-halflings-white.png
+./www/settings/bootstrap/img/glyphicons-halflings.png
 
-./www/repeater:
-rootap_set.sh
+./www/settings/bootstrap/js
+./www/settings/bootstrap/js/bootbox.min.js
+./www/settings/bootstrap/js/bootstrap.min.js
 
-./www/rndis:
-add.sh         udhcpc.script
+./www/settings/css/style.css
 
-./www/settings:
-bootstrap   css         images      img         index.html  js
+./www/settings/images/ajax-loader-1.gif
+./www/settings/images/anim_wait_bar_mini_01.gif
+./www/settings/images/ajax-loader-2.gif
+./www/settings/images/logo-nimble-apps.png
 
-./www/settings/bootstrap:
-css  img  js
+./www/settings/img/ajax-loader.gif
+./www/settings/img/lock_strength3.png
+./www/settings/img/glyphicons-halflings-white.png
+./www/settings/img/online.png
+./www/settings/img/glyphicons-halflings.png
+./www/settings/img/strength0.png
+./www/settings/img/lock_strength0.png  
+./www/settings/img/strength1.png
+./www/settings/img/lock_strength1.png
+./www/settings/img/strength2.png
+./www/settings/img/lock_strength2.png
+./www/settings/img/strength3.png
 
-./www/settings/bootstrap/css:
-bootstrap-responsive.min.css  bootstrapSwitch.css
-bootstrap.min.css
+./www/settings/js/bootstrapSwitch.js
+./www/settings/js/jquery.form.min.js
+./www/settings/js/jquery.validate.js
+./www/settings/js/jquery-1.9.0.min.js
+./www/settings/js/jquery.localize.min.js
+./www/settings/js/jquery.cookie.js 
+./www/settings/js/jquery.nimble.loader.js
 
-./www/settings/bootstrap/img:
-glyphicons-halflings-white.png  glyphicons-halflings.png
+./www/settings/js/lang/
+./www/settings/js/lang/example-en.json
+./www/settings/js/lang/example-tw.json
 
-./www/settings/bootstrap/js:
-bootbox.min.js    bootstrap.min.js
+./www/storage/
+./www/storage/a6usbreset.sh
+./www/storage/check_filesystem_type
+./www/storage/remove.sh
+./www/storage/add.sh
+./www/storage/df_check.sh
+./www/storage/auto_a6usbreset.sh
+./www/storage/reflash.sh
 
-./www/settings/css:
-style.css
-
-./www/settings/images:
-ajax-loader-1.gif          anim_wait_bar_mini_01.gif
-ajax-loader-2.gif          logo-nimble-apps.png
-
-./www/settings/img:
-ajax-loader.gif                 lock_strength3.png
-glyphicons-halflings-white.png  online.png
-glyphicons-halflings.png        strength0.png
-lock_strength0.png              strength1.png
-lock_strength1.png              strength2.png
-lock_strength2.png              strength3.png
-
-./www/settings/js:
-bootstrapSwitch.js       jquery.form.min.js       jquery.validate.js
-jquery-1.9.0.min.js      jquery.localize.min.js   lang
-jquery.cookie.js         jquery.nimble.loader.js
-
-./www/settings/js/lang:
-example-en.json  example-tw.json
-
-./www/storage:
-a6usbreset.sh          check_filesystem_type  remove.sh
-add.sh                 df_check.sh
-auto_a6usbreset.sh     reflash.sh
-~ #
