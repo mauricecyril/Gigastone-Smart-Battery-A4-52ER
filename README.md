@@ -93,11 +93,37 @@ Once you're connected to the router telnet into the device on port 23:
 # telent -l root:root 192.168.1.2 23
 ```
 
-
-#### 2) Change the root password
+#### 2) Generate a password on another linux machine
+Install openssl-tool
 ```shell
-#  
+#  sudo apt-get install openssl-tool
 ```
+
+Generate Password Hash
+```shell
+#  openssl passwd -1
+Password:
+Verifying - Password:
+$1$3JUKmV3R$vZVeb51f1t6QZUecwuRHX0
+```
+or
+```shell
+# openssl passwd -1 -salt yoursalt
+Password:
+$1$yoursalt$5WA5NN0quMJ62v5LCu8kj1
+```
+
+#### 3) Change the root password
+Open the password shadow file with vi
+```shell
+#  vi /etc/shadow
+```
+
+Insert the hash you generated in step 2 after "root:" by pressing "*" followed by "i" 
+
+
+
+
 
 ### File & Folder layout
 In /tmp folder:
