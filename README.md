@@ -121,7 +121,7 @@ Open the password shadow file with vi
 
 Insert the hash you generated in step 2 after "root:" by pressing "*" followed by "i" 
 
-
+Force quit and save the /etc/shadow file by pressing "escape" followed by ":wq!" and enter.
 
 
 
