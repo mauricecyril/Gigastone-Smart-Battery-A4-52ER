@@ -75,6 +75,16 @@ VCED exceptions: not available
 
 VCEI exceptions: not available
 
+### Users
+root
+box
+ftp
+adm
+uucp
+operator
+nobody
+user
+
 
 ### Accessing Via Telnet
 #### 1) Turn on the Smart Battery by pressing and holding the power button for 5 seconds. Once the blue LED is on you can connect to th e
